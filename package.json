@@ -1,0 +1,23 @@
+{
+  "name": "ardi-uploader",
+  "version": "1.0.0",
+  "description": "Ajax phpto uploader with crop option",
+  "main": "lib/uploader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ardeshir Eshghi",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "handlebar": "^1.0.0",
+    "jquery": "^2.2.3",
+    "lodash": "^4.12.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "rewire": "^2.5.1",
+    "sinon": "^1.17.4"
+  }
+}
