@@ -1,63 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+  <title>Test Harness page</title>
+  <link rel="stylesheet" type="text/css" href="dist/the-image-uploader.css">
 </head>
 <body>
-<form enctype="" method="POST" action="process.php">
-    <img src="" class="js-upload-photo" style="width:600px;height: 450px; display: block;" />
-    <input type="file" name="myfile" />
-</form>
-<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-<script type="text/javascript">
-    var myFileEl = document.querySelector('[type="file"]');
-
-    var submitForm = function submitForm(formEl, fileBlob, fileName) {
-        var data = new FormData(formEl);
-        data.append('myfile2', fileBlob, fileName);
-        return $.ajax({
-            url: formEl.action.replace('.com', '.com:8080'),
-            data: data,
-            method: 'POST',
-            cache: false,
-            contentType: false,
-            processData: false
-        });
-    };
-
-    var getReaderHandler = function getReaderHandler(selectedFile) {
-        var fileType = selectedFile.type;
-        var fileName = selectedFile.name.replace(/(.+)\./, "$1-blob.")
-
-        return function(e) {
-            console.log(e.target.result);
-            var blob = new Blob([e.target.result], {type : fileType}, fileName);
-            var imageEl = document.querySelector('.js-upload-photo');
-            imageEl.src = URL.createObjectURL(blob);
-
-            submitForm(document.forms[0], blob, fileName)
-            .then(function(uploadPaths){
-
-                uploadPaths.paths.forEach(function(path) {
-                    var img = document.createElement('img');
-                    img.src = path.slice(1);
-                    img.style.width = '800px';
-                    img.style.height = '600px';
-                    document.forms[0].appendChild(img);
-                });
-
-            }, function(xhr, textStatus, err) {
-                console.log('Error', xhr, textStatus, err);
-            });
-        };
-    };
-
-    myFileEl.addEventListener('change', function() {
-        var selectedFile = this.files[0];
-        var reader = new FileReader();
-        reader.addEventListener('loadend', getReaderHandler(selectedFile), false);
-        reader.readAsArrayBuffer(selectedFile);
-    }, false);
-</script>
+<script type="text/javascript" src="dist/image-uploader.js"></script>
 </body>
 </html>

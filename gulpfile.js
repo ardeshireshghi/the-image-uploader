@@ -1,9 +1,10 @@
 var gulp = require('./gulp')([
     'browserify',
     'sass',
-    'watch'
-    // 'serve'
+    'watch',
+    'jshint',
+    'serve'
 ]);
 
 gulp.task('build', ['browserify', 'sass']);
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['build', 'watch','serve']);

@@ -2,7 +2,7 @@
   "name": "the-image-uploader",
   "version": "1.0.0",
   "description": "Ajax photo uploader with crop option",
-  "main": "src/javascript/app.js",
+  "main": "src/javascript/lib/uploader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

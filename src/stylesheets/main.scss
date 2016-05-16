@@ -4,10 +4,11 @@
 // // Partials
 // @import "partials/reset";
 // @import "partials/typography";
-// @import "partials/buttons";
+@import "partials/general";
+@import "partials/buttons";
 // @import "partials/figures";
 // @import "partials/grids";
 // ...
 
-@import "remodal"
-@import "remodal-default-theme"
+@import "vendor/remodal-theme"
+// @import "remodal-default-theme"
