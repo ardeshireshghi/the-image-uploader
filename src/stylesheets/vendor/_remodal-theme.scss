@@ -4,6 +4,10 @@
 
 /* Default theme styles for the background */
 
+.remodal * {
+  font-family: $photo-uploader-font-stack
+}
+
 .remodal-bg.remodal-is-opening,
 .remodal-bg.remodal-is-opened {
   filter: blur(3px);
@@ -31,16 +35,6 @@
 
 /* Default theme styles of the wrapper */
 
-.remodal-wrapper {
-  padding: 10px 10px 0;
-  background-color: rgba(0,0,0, 0.2);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transform: translateY(0);
-}
 
 /* Default theme styles of the modal dialog */
 
@@ -51,11 +45,11 @@
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  padding: 35px;
+  padding: 25px;
   color: #2b2e38;
   background: #fff;
-  @media screen and (min-width: 641px) {
-      max-width: 700px;
+  @media screen and (min-width: #{$photo-uploader-max-width} - 50px) {
+      max-width: 500px;
   }
 }
 
@@ -85,7 +79,7 @@
 .remodal-close {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 
   display: block;
   overflow: visible;
@@ -152,12 +146,12 @@
 
 .remodal-confirm {
   color: #fff;
-  background: #81c784;
+  background: #f27a67;
 }
 
 .remodal-confirm:hover,
 .remodal-confirm:focus {
-  background: #66bb6a;
+  background: #c0392b;
 }
 
 .remodal-cancel {

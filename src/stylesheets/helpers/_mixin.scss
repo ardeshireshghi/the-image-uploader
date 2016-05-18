@@ -1,0 +1,28 @@
+@mixin image-uploader-title() {
+  font-size: 2em;
+  text-align:center;
+  margin-top: 0px;
+  padding-bottom: 25px;
+}
+
+@mixin image-uploader-drag-icon() {
+	width: 64px;
+    height: 64px;
+    position: relative;
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3MS4yIDQ3MS4yIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NzEuMiA0NzEuMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zOTYuNywwSDc0LjVDMzMuNCwwLDAsMzMuNCwwLDc0LjV2MzIyLjJjMCw0MS4xLDMzLjQsNzQuNSw3NC41LDc0LjVoMzIyLjJjNDEuMSwwLDc0LjUtMzMuNCw3NC41LTc0LjVWNzQuNSAgICBDNDcxLjIsMzMuNSw0MzcuNywwLDM5Ni43LDB6IE00NDQuMiwzOTYuN2MwLDI2LjItMjEuMyw0Ny41LTQ3LjUsNDcuNUg3NC41Yy0yNi4yLDAtNDcuNS0yMS4zLTQ3LjUtNDcuNVY3NC41ICAgIEMyNyw0OC4zLDQ4LjMsMjcsNzQuNSwyN2gzMjIuMmMyNi4yLDAsNDcuNSwyMS4zLDQ3LjUsNDcuNVYzOTYuN3oiIGZpbGw9IiM5MURDNUEiLz4KCQk8cGF0aCBkPSJNMjQ1LjEsMTE3LjFjLTUuMy01LjMtMTMuOC01LjMtMTkuMSwwbC03MC40LDcwLjVjLTUuMyw1LjMtNS4zLDEzLjgsMCwxOS4xczEzLjgsNS4zLDE5LjEsMGw0Ny41LTQ3LjV2MTg1LjQgICAgYzAsNy41LDYsMTMuNSwxMy41LDEzLjVzMTMuNS02LDEzLjUtMTMuNVYxNTkuMmw0Ny40LDQ3LjRjMi42LDIuNiw2LjEsNCw5LjUsNHM2LjktMS4zLDkuNS00YzUuMy01LjMsNS4zLTEzLjgsMC0xOS4xICAgIEwyNDUuMSwxMTcuMXoiIGZpbGw9IiM5MURDNUEiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+    background-repeat: no-repeat;
+    display: block;
+    margin: 12px auto;
+}
+
+@mixin image-uploader-btn() {
+	border: none;
+    padding: 12px 30px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+

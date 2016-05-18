@@ -42,7 +42,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp-jshint": "^2.0.1",
-    "handlebars": "^4.0.5",
+    "gulp-webserver": "^0.9.1",
     "hbsfy": "^2.7.0",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",

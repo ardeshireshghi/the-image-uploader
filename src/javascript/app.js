@@ -31,7 +31,7 @@
   btnEl.addClass('upload__btn');
 
   $('body, html').addClass('test__page')
-                  .append(btnEl);
+  $('body').append(btnEl);
 
   var myUploader = imageUploader(btnEl, {
     fileInputName: 'the-test-file',

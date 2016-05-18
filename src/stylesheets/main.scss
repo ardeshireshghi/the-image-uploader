@@ -1,14 +1,17 @@
 // Modules and Variables
-// @import "partials/base";
+@import "partials/base";
 
-// // Partials
+// Helpers
+@import "helpers/mixin";
+
+// Partials
 // @import "partials/reset";
-// @import "partials/typography";
+@import "partials/typography";
 @import "partials/general";
 @import "partials/buttons";
-// @import "partials/figures";
-// @import "partials/grids";
-// ...
 
-@import "vendor/remodal-theme"
-// @import "remodal-default-theme"
+@import "vendor/remodal-theme";
+@import "remodal";
+
+
+@import "components/uploader";
