@@ -8,7 +8,7 @@ module.exports = function() {
       livereload: true,
       directoryListing: true,
       open: true,
-      port: config.PORT,
-      host: config.HOST
+      port: config.STATIC_PORT,
+      host: config.STATIC_HOST
     }));
 };

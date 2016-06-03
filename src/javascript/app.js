@@ -34,7 +34,7 @@
   $('body').append(btnEl);
 
   var myUploader = imageUploader(btnEl, {
-    fileInputName: 'the-test-file',
-    url: '/upload_handler.php'
+    fileInputName: 'testfile',
+    url: 'http://localhost:9301/upload'
   });
 });

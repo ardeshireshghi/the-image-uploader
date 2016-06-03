@@ -3,8 +3,9 @@ var gulp = require('./gulp')([
     'sass',
     'watch',
     'jshint',
-    'serve'
+    'servestatic',
+    'startapp'
 ]);
 
 gulp.task('build', ['browserify', 'sass']);
-gulp.task('default', ['build', 'watch','serve']);
+gulp.task('default', ['build', 'watch','startapp', 'servestatic']);
