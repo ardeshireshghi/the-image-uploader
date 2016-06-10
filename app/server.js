@@ -13,7 +13,7 @@ function isUploadRequest(req) {
 function getResponseHeaders() {
   return {
     'content-type': 'application/json',
-    'allow-access-control-origin': '*'
+    'Access-Control-Allow-Origin': '*'
   };
 }
 
@@ -39,30 +39,43 @@ http.createServer(function(req, res) {
 
     form.parse(req, function(err, fields, files) {
 
-      if (files.testfile && files.testfile.length) {
-        saveUploadedFile(files.testfile, function fileSaved(err, uploadedFile) {
-          if (!err) {
-            res.writeHead(200, getResponseHeaders());
-            res.end(util.inspect({
-              success: true,
-              status: 200,
-              data: {
-                uploadPath: 'uploads/'.concat(uploadedFile.originalFilename)
-              }
-            }));
-          } else {
-            res.writeHead(500, getResponseHeaders());
-            res.end(util.inspect({
-              errorCode: 100,
-              errorMessage: err.message,
-              errorType: err.type,
-              status: 500
-            }));
-          }
-
-        });
+      if (Object.keys(files).length === 0) {
+        res.writeHead(400, getResponseHeaders());
+        return res.end(JSON.stringify({
+          errorCode: 200,
+          errorMessage: 'No file fields found',
+          errorType: 'ValidationException',
+          status: 400
+        }));
       }
 
+      for (var file in files) {
+        if (files.hasOwnProperty(file)) {
+          if (files[file] && files[file].length) {
+            saveUploadedFile(files[file], function fileSaved(err, uploadedFile) {
+              if (!err) {
+                res.writeHead(200, getResponseHeaders());
+                res.end(JSON.stringify({
+                  success: true,
+                  status: 200,
+                  data: {
+                    uploadPath: 'uploads/'.concat(uploadedFile.originalFilename)
+                  }
+                }));
+              } else {
+                res.writeHead(500, getResponseHeaders());
+                res.end(JSON.stringify({
+                  errorCode: 100,
+                  errorMessage: err.message,
+                  errorType: err.type,
+                  status: 500
+                }));
+              }
+
+            });
+          }
+        }
+      }
     });
 
     return;

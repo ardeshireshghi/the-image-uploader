@@ -25,6 +25,8 @@
   "dependencies": {
     "browserify": "12.0.1",
     "browserify-shim": "^3.8.12",
+    "cropit": "^0.5.1",
+    "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "gulp-minify-css": "1.2.2",
     "gulp-notify": "2.2.0",
@@ -35,6 +37,7 @@
     "jquery": "^2.2.3",
     "jquery-easing": "0.0.1",
     "jscs": "^3.0.3",
+    "jvent": "^0.2.0",
     "lodash": "^4.12.0",
     "remodal": "^1.0.7",
     "vinyl-source-stream": "1.1.0"

@@ -17,7 +17,6 @@
   }
 
 })(this, function (imageUploader) {
-  var btnEl;
 
   function createAnchorTag(text, href) {
     var el = document.createElement('a');
@@ -27,14 +26,35 @@
     return el;
   }
 
-  btnEl = $(createAnchorTag('Upload image', '#test-uploader'));
-  btnEl.addClass('upload__btn');
+  var uploadBtnFirstEl = $(createAnchorTag('Upload image no initial image', '#test-uploader-1'));
+  var uploadBtnSecondEl = $(createAnchorTag('Upload image initial image', '#test-uploader-2'));
+  uploadBtnFirstEl.addClass('upload__btn');
+  uploadBtnSecondEl.addClass('upload__btn');
 
-  $('body, html').addClass('test__page')
-  $('body').append(btnEl);
+  $('body, html').addClass('test__page');
+  $('body').append(uploadBtnFirstEl)
+           .append(uploadBtnSecondEl);
 
-  var myUploader = imageUploader(btnEl, {
-    fileInputName: 'testfile',
-    url: 'http://localhost:9301/upload'
+  var myUploaderFirst = imageUploader(uploadBtnFirstEl, {
+    fileInputName: 'testfile1',
+    url: 'http://localhost:9301/upload',
+    uploadDone: function(response) {
+      console.log('myUploaderFirst, Upload finished', response);
+    },
+    uploadError: function(xhr, textStatus, err) {
+      console.log('myUploaderFirst, Error', xhr, textStatus, err);
+    }
+  });
+
+  var myUploaderSecond = imageUploader(uploadBtnSecondEl, {
+    fileInputName: 'testfile2',
+    url: 'http://localhost:9301/upload',
+    imageSrc: '/img/test-image.jpg',
+    uploadDone: function(response) {
+      console.log('myUploaderSecond, Upload finished', response);
+    },
+    uploadError: function(xhr, textStatus, err) {
+      console.log('myUploaderSecond, Error', xhr, textStatus, err);
+    }
   });
 });
