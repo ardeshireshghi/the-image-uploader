@@ -215,8 +215,16 @@
       this._getModalEl().remodal({hashTracking: false});
 
       $(document).on('opened', '[data-remodal-id=' + this._getModalId() + ']', function (e) {
+        var tempImagePreviewEl = _this._getModalEl().find('.image-uploader__drag-box__image--js');
+
         if (!_this.initialCropperSet) {
           _this._setCropper(_this.settings.cropperParams);
+
+          // Temporarily show the image
+          if (_this.settings.imageSrc) {
+            tempImagePreviewEl.attr('src', _this.settings.imageSrc);
+            tempImagePreviewEl.addClass('show');
+          }
           _this.initialCropperSet = true;
         }
       });
