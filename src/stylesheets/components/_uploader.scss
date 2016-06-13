@@ -38,9 +38,12 @@
         appearance: none;
         height: 5px;
         background: #C3C3C3;
+        -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
         outline: none;
+        padding: 0;
+        border: none;
 
         &::-moz-range-track {
             -webkit-appearance: none;
