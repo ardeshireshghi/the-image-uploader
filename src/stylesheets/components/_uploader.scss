@@ -162,7 +162,8 @@
             background-color: $photo-uploader-btn-choose-file-color;
 
             &:hover,&:focus {
-                background-color: $photo-uploader-btn-choose-file-hover-color
+                background-color: $photo-uploader-btn-choose-file-hover-color;
+                color: white;
             }
         }
 

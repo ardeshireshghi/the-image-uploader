@@ -212,7 +212,7 @@
       }
 
       // Start remodal
-      this._getModalEl().remodal();
+      this._getModalEl().remodal({hashTracking: false});
 
       $(document).on('opened', '[data-remodal-id=' + this._getModalId() + ']', function (e) {
         if (!_this.initialCropperSet) {

@@ -52,8 +52,9 @@
 
     _getModalId: function() {
       if (!this._modalId) {
-        var modalId = this.btnEl.attr('href') || this.btnEl.data('target');
+        var modalId = this.btnEl.data('target') || this.btnEl.attr('href');
         this._modalId = modalId.replace(/^#?/, '');
+        this.btnEl.attr('data-remodal-target', this._modalId);
       }
       return this._modalId;
     },
