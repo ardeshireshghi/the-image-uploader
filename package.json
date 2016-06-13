@@ -40,6 +40,7 @@
     "jvent": "^0.2.0",
     "lodash": "^4.12.0",
     "remodal": "^1.0.7",
+    "stripify": "^4.0.0",
     "vinyl-source-stream": "1.1.0"
   },
   "devDependencies": {

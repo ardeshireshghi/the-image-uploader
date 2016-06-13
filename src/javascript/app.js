@@ -50,8 +50,12 @@
     fileInputName: 'testfile2',
     url: 'http://localhost:9301/upload',
     imageSrc: '/img/test-image.jpg',
-    uploadDone: function(response) {
-      console.log('myUploaderSecond, Upload finished', response);
+    uploadDone: function(imageDataURI, response) {
+      console.log('myUploaderSecond, Upload finished', imageDataURI, response);
+
+      var uploadedImage = document.createElement('img');
+      uploadedImage.src = imageDataURI;
+      document.body.appendChild(uploadedImage);
     },
     uploadError: function(xhr, textStatus, err) {
       console.log('myUploaderSecond, Error', xhr, textStatus, err);

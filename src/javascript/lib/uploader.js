@@ -6,7 +6,8 @@
     root.imageUploader = module.exports = factory(
       require('jquery'),
       require('./uploadView'),
-      require('./util/dataURItoBlob')
+      require('./util/dataURItoBlob'),
+      require('./util/logger')
     );
 
   } else if (typeof define === 'function' && define.amd) {
@@ -18,12 +19,12 @@
     root.imageUploader = factory(root.jQuery);
   }
 
-})(this, function ($, uploadView, dataURItoBlob) {
+})(this, function ($, uploadView, dataURItoBlob, Logger) {
 
   function ImageUploader(btnEl, params) {
     this.btnEl = btnEl;
     this.settings = $.extend(true, {}, ImageUploader.defaults, params);
-
+    this.logger = Logger('uploader.js');
     this.init();
   }
 
@@ -57,16 +58,16 @@
       return this._modalId;
     },
 
-    _doUploadImage: function(fileName, imageData) {
+    _doUploadImage: function(fileName, imageDataURI) {
       var _this = this;
 
-      this.uploadImage(fileName, imageData)
+      this.uploadImage(fileName, imageDataURI)
       .then(function(response) {
-        console.log('Uploading Service response', response);
+        _this.logger.log('Uploading Service response', response);
         _this.hide();
-        _this.settings.uploadDone && _this.settings.uploadDone.call(null, response);
+        _this.settings.uploadDone && _this.settings.uploadDone.call(null, imageDataURI, response);
       }, function(xhr, textStatus, err) {
-        console.log('Error', xhr, textStatus, err);
+        _this.logger.log('Error', xhr, textStatus, err);
         _this.settings.uploadError && _this.settings.uploadError.apply(null, arguments);
       });
     },

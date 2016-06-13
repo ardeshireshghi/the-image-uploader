@@ -10,9 +10,9 @@ module.exports = function() {
   });
 
   // Clean up consoles
-  if (!process.env.DEBUG) {
-    bundler.transform("stripify");
-  }
+  // if (!process.env.DEBUG) {
+  //   bundler.transform("stripify");
+  // }
 
   bundler.bundle()
   //Pass desired output filename to vinyl-source-stream

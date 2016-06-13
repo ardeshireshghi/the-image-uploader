@@ -24,10 +24,6 @@
       opacity: .1;
     }
 
-    .cropit-preview-image {
-        // transform-origin: center top 0px !important;
-    }
-
     /*
      * If the slider or anything else is covered by the background image,
      * use relative or absolute position on it
@@ -104,13 +100,17 @@
         margin-bottom: 35px;
         &__inner {
             padding-top: 100%;
-            outline: 3px dashed #ddd;
-            background-color: #f9f9f9;
+            outline: 3px dashed $photo-uploader-drop-area-border-color;
+            background-color: $photo-uploader-drop-area-bg-color;
+            -ms-transition: outline-offset 0.15s ease;
+            -o-transition: outline-offset 0.15s ease;
+            -moz-transition: outline-offset 0.15s ease;
+            -webkit-transition: outline-offset 0.15s ease;
             transition: outline-offset 0.15s ease;
             position: relative;
             .is-dragover & {
-                outline: 3px dashed #f9f9f9;
-                background-color: #d1d1d1;
+                outline: 3px dashed $photo-uploader-drop-area-bg-color;
+                background-color: $photo-uploader-drop-area-dragged-bg-color;
                 outline-offset: -20px;
             }
         }
@@ -167,6 +167,7 @@
             @include image-uploader-btn();
             background-color: $photo-uploader-btn-save-color;
             font-size: 1rem;
+            cursor: pointer;
             &:hover,&:focus {
                 background-color: $photo-uploader-btn-save-hover-color
             }

@@ -159,6 +159,10 @@
     },
 
     onWindowResized: function(e) {
+      if (this._getModal().getState !== 'opened') {
+        return;
+      }
+
       // Force updating the image size upon resize
       if (this.uploadImageData || this.settings.imageSrc) {
         var tempImagePreviewEl = this._getModalEl().find('.image-uploader__drag-box__image--js');
