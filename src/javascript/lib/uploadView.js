@@ -251,7 +251,8 @@
 
       var modalHtml = uploaderHtmlTemplate({
         modalId: _this._getModalId(),
-        fileInputName: _this.settings.fileInputName
+        fileInputName: _this.settings.fileInputName,
+        uploaderTitle: _this.settings.uploaderTitle || 'Update Profile Picture'
       });
 
       return modalHtml;
