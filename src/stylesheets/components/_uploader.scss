@@ -5,7 +5,7 @@
 
     .fa {
         font: normal normal normal 14px/1 FontAwesome;
-        margin:10px;
+        margin:30px 10px;
         z-index: 40;
         position: relative;
         cursor: pointer;
@@ -41,7 +41,7 @@
         -moz-appearance: none;
         appearance: none;
         height: 5px;
-        background: #C3C3C3;
+        background: #C3C3C3 !important;
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
