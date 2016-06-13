@@ -24,6 +24,10 @@
       opacity: .1;
     }
 
+    .cropit-preview-image {
+        max-width: initial !important;
+    }
+
     /*
      * If the slider or anything else is covered by the background image,
      * use relative or absolute position on it
@@ -189,5 +193,3 @@
         height: 100%;
     }
 }
-
-
