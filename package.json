@@ -1,6 +1,6 @@
 {
   "name": "the-image-uploader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ajax photo uploader with crop option",
   "main": "src/javascript/lib/uploader.js",
   "scripts": {
@@ -8,10 +8,6 @@
   },
   "author": "Ardeshir Eshghi",
   "license": "ISC",
-  "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js",
-    "remodal": "./node_modules/remodal/dist/remodal.js"
-  },
   "browserify-shim": {
     "jquery": "$",
     "remodal": "remodal"
