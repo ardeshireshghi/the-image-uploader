@@ -224,6 +224,9 @@
           if (_this.settings.imageSrc) {
             tempImagePreviewEl.attr('src', _this.settings.imageSrc);
             tempImagePreviewEl.addClass('show');
+
+            // Set the filename in case the user crops the existing image
+            _this.fileName = _this.settings.imageSrc.split('/').pop();
           }
           _this.initialCropperSet = true;
         }
