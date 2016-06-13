@@ -137,11 +137,13 @@
             top: 0;
             max-width: 100%;
             width: 100%;
+        }
+        
+        &__image-cropper {
             .is-dropped & {
-                display: inline-block;
+                    display: inline-block;
             }
         }
-
         &__icon-wrapper {
             position: absolute;
             top: 50%;
