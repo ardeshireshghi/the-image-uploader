@@ -8,10 +8,6 @@
   },
   "author": "Ardeshir Eshghi",
   "license": "ISC",
-  "browserify-shim": {
-    "jquery": "$",
-    "remodal": "remodal"
-  },
   "browserify": {
     "transform": [
       "browserify-shim",
