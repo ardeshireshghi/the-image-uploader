@@ -9,7 +9,6 @@
         require('./template/upload_template.hbs'),
         require('./util/smartResize'),
         require('jvent'),
-        require('jquery-easing'),
         require('cropit')
     );
 
