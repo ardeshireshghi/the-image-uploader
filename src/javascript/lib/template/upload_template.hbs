@@ -1,0 +1,30 @@
+<div class="remodal" data-remodal-id="{{modalId}}">
+  <button data-remodal-action="close" class="remodal-close"></button>
+  <div class="image-uploader">
+      <div class="image-uploader__title">Photo Uploader</div>
+      <div class="image-uploader__drag-box image-uploader__drag-box--js">
+        <div class="image-uploader__drag-box__inner">
+            <div class="image-uploader__drag-box__icon-wrapper">
+                <i class="image-uploader__drag-box__icon"></i>
+                Drag photo to upload
+            </div>
+            <img src="" class="image-uploader__drag-box__image image-uploader__drag-box__image--js">
+            <div class="image-uploader__drag-box__image-cropper image-uploader__drag-box__image-cropper--js" id="image-cropper">
+              <div class="cropit-preview"></div>
+
+              <i class="fa fa-undo image-uploader__btn--rotate-ccw--js" aria-hidden="true"></i><i class="fa fa-repeat image-uploader__btn--rotate-cw--js" aria-hidden="true"></i><input type="range" class="cropit-image-zoom-input" >
+            </div>
+        </div>
+      </div>
+      <!--p>
+        Select your file
+
+      </p-->
+      <!--button data-remodal-action="cancel" class="remodal-cancel">Close</button-->
+      <a class="image-uploader__btn--choose-file">Choose file
+        <input class="image-uploader__file-chooser image-uploader__file-chooser--js" type="file" name="{{fileInputName}}" >
+      </a>
+
+      <button class="image-uploader__btn--upload image-uploader__btn--upload--js">Upload</button>
+  </div>
+</div>

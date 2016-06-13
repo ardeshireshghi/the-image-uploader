@@ -1,0 +1,189 @@
+.image-uploader {
+    &__title {
+        @include image-uploader-title();
+    }
+
+    .fa {
+        font: normal normal normal 14px/1 FontAwesome;
+        margin:10px;
+        z-index: 40;
+        position: relative;
+        cursor: pointer;
+    }
+    .cropit-preview {
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+      &.cropit-image-loaded {
+        cursor: pointer
+      }
+    }
+
+    /* Translucent background image */
+    .cropit-preview-background {
+      opacity: .1;
+    }
+
+    /*
+     * If the slider or anything else is covered by the background image,
+     * use relative or absolute position on it
+     */
+
+    .cropit-image-zoom-input {
+        position: relative;
+        width: 130px;
+        margin: 0 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 5px;
+        background: #C3C3C3;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        outline: none;
+
+        &::-moz-range-track {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            height: 5px;
+            background: #eee;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            outline: none
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #888;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-transition: background 0.25s;
+            -moz-transition: background 0.25s;
+            -o-transition: background 0.25s;
+            -ms-transition: background 0.25s;
+            transition: background 0.25s;
+            &:hover {
+                background: #bbb;
+            }
+        }
+
+
+        &::-moz-range-thumb {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #888;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -webkit-transition: background 0.25s;
+            -moz-transition: background 0.25s;
+            -o-transition: background 0.25s;
+            -ms-transition: background 0.25s;
+            transition: background 0.25s;
+        }
+    }
+
+    /* Limit the background image by adding overflow: hidden */
+    #image-cropper {
+      height: 100%;
+    }
+
+    &__drag-box {
+        max-width: 100%;
+        margin-bottom: 35px;
+        &__inner {
+            padding-top: 100%;
+            outline: 3px dashed $photo-uploader-drop-area-border-color;
+            background-color: $photo-uploader-drop-area-bg-color;
+            -ms-transition: outline-offset 0.15s ease;
+            -o-transition: outline-offset 0.15s ease;
+            -moz-transition: outline-offset 0.15s ease;
+            -webkit-transition: outline-offset 0.15s ease;
+            transition: outline-offset 0.15s ease;
+            position: relative;
+            .is-dragover & {
+                outline: 3px dashed $photo-uploader-drop-area-bg-color;
+                background-color: $photo-uploader-drop-area-dragged-bg-color;
+                outline-offset: -20px;
+            }
+        }
+
+        &__image {
+            display: none;
+            z-index: 10;
+            &.show {
+                display: block;
+            }
+        }
+
+        &__image,
+        &__image-cropper {
+            position: absolute;
+            left: 0;
+            top: 0;
+            max-width: 100%;
+            width: 100%;
+            .is-dropped & {
+                display: inline-block;
+            }
+        }
+
+        &__icon-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            .is-dragover & {
+                color: white;
+            }
+        }
+
+        &__icon {
+            @include image-uploader-drag-icon();
+        }
+    }
+
+    &__btn {
+        &--choose-file {
+            @include image-uploader-btn();
+            background-color: $photo-uploader-btn-choose-file-color;
+
+            &:hover,&:focus {
+                background-color: $photo-uploader-btn-choose-file-hover-color
+            }
+        }
+
+        &--upload {
+            @include image-uploader-btn();
+            background-color: $photo-uploader-btn-save-color;
+            font-size: 1rem;
+            cursor: pointer;
+            &:hover,&:focus {
+                background-color: $photo-uploader-btn-save-hover-color
+            }
+        }
+    }
+
+    &__file-chooser {
+        position: absolute;
+        width: 100%;
+        margin-left: 0;
+        cursor: pointer;
+        opacity: .0001;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+}
+
+

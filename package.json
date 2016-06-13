@@ -1,22 +1,58 @@
 {
-  "name": "ardi-uploader",
+  "name": "the-image-uploader",
   "version": "1.0.0",
-  "description": "Ajax phpto uploader with crop option",
-  "main": "lib/uploader.js",
+  "description": "Ajax photo uploader with crop option",
+  "main": "src/javascript/lib/uploader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ardeshir Eshghi",
   "license": "ISC",
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "remodal": "./node_modules/remodal/dist/remodal.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "remodal": "remodal"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "hbsfy"
+    ]
+  },
   "dependencies": {
+    "browserify": "12.0.1",
+    "browserify-shim": "^3.8.12",
+    "cropit": "^0.5.1",
+    "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
-    "handlebar": "^1.0.0",
+    "gulp-minify-css": "1.2.2",
+    "gulp-notify": "2.2.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "2.1.0",
+    "gulp-util": "3.0.7",
+    "handlebars": "^4.0.5",
     "jquery": "^2.2.3",
-    "lodash": "^4.12.0"
+    "jquery-easing": "0.0.1",
+    "jscs": "^3.0.3",
+    "jvent": "^0.2.0",
+    "lodash": "^4.12.0",
+    "remodal": "^1.0.7",
+    "stripify": "^4.0.0",
+    "vinyl-source-stream": "1.1.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-nodemon": "^2.0.7",
+    "gulp-webserver": "^0.9.1",
+    "hbsfy": "^2.7.0",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0",
     "mocha": "^2.4.5",
+    "multiparty": "^4.1.2",
     "rewire": "^2.5.1",
     "sinon": "^1.17.4"
   }

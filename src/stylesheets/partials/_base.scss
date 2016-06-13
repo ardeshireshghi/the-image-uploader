@@ -1,0 +1,17 @@
+// Font Variables
+$roboto-slab: 'Roboto Slab', serif;
+$open-sans: 'Open Sans', sans-serif;
+$helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// Uploader custom variables
+$photo-uploader-font-stack: $helvetica !default;
+$photo-uploader-btn-choose-file-color: #2ecc71 !default;
+$photo-uploader-btn-choose-file-hover-color: #27ae60 !default;
+$photo-uploader-btn-save-color: #3498db !default;
+$photo-uploader-btn-save-hover-color: #2980b9 !default;
+$photo-uploader-max-width: 800px;
+
+// Drop area
+$photo-uploader-drop-area-border-color: #ddd !default;
+$photo-uploader-drop-area-bg-color: #f9f9f9 !default;
+$photo-uploader-drop-area-dragged-bg-color: #d1d1d1 !default;
