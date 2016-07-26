@@ -1,5 +1,8 @@
-# the-image-uploader
+# Image uploader
 Easy to use and stylish Ajax image uploader
+
+## Dependencies
+Main dependency is jQuery
 
 ## Usage
 Below example shows how the uploader can be used:
@@ -12,7 +15,7 @@ var uploadPostActionUrl = '/uploads';
 var initialImageSrc = 'http://some-image-url';
 
 // Some element which opens the uploader modal 
-var uploaderLinkEl = document.querySelector('.js-upload-btn');
+var uploaderLinkEl = $('.js-upload-btn');
 
 var uploader = imageUploader(uploaderLinkEl, {
         fileInputName: 'image',
