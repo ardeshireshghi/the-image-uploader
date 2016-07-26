@@ -11,7 +11,7 @@ var uploadPostActionUrl = '/uploads';
 // Note: Specify this if you have the image
 var initialImageSrc = 'http://some-image-url';
 
-var uploader= imageUploader(uploaderLinkEl, {
+var uploader = imageUploader(uploaderLinkEl, {
         fileInputName: 'image',
         uploaderTitle: 'Update Profile Picture',
         url: uploadPostActionUrl,
@@ -23,5 +23,5 @@ var uploader= imageUploader(uploaderLinkEl, {
         uploadError: function(xhr, textStatus, err) {
           //Handle upload error
         }
-      });
+});
 ```
