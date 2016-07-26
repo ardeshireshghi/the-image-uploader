@@ -11,6 +11,9 @@ var uploadPostActionUrl = '/uploads';
 // Note: Specify this if you have the image
 var initialImageSrc = 'http://some-image-url';
 
+// Some element which opens the uploader modal 
+var uploaderLinkEl = document.querySelector('.js-upload-btn');
+
 var uploader = imageUploader(uploaderLinkEl, {
         fileInputName: 'image',
         uploaderTitle: 'Update Profile Picture',
