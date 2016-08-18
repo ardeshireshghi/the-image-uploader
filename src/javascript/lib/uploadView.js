@@ -131,9 +131,7 @@
         onFileChange: function(e) {
           _this.fileName = e.target.files[0].name;
         },
-        smallImage: true,
         imageBackground: true,
-        maxZoom: 2,
         imageBackgroundBorderWidth: 20,
         allowDragNDrop: false,
         $fileInput: _this._getModalEl().find('.image-uploader__file-chooser--js')
