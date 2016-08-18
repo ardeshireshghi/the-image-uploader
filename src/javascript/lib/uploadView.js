@@ -61,7 +61,7 @@
 
     resetModal: function() {
       this.hideModal();
-      this_updateCropper('');
+      this._updateCropper('');
     },
 
     showModal: function() {
@@ -107,7 +107,6 @@
       .on('drop', function(e) {
         var files = e.originalEvent.dataTransfer.files;
         if (files.length && _this._fileValidImage(files[0])) {
-          $(this).addClass('is-dropped');
           _this.fileName = files[0].name;
           _this._getDataUri(files[0], function dataUriReceived(err, dataUri) {
             _this._updateCropper(dataUri);
@@ -124,8 +123,9 @@
         },
         onImageLoaded: function() {
           var tempImagePreviewEl = _this._getModalEl().find('.image-uploader__drag-box__image--js');
+          var dragDropBoxEl = $('.image-uploader__drag-box--js');
           tempImagePreviewEl.removeClass('show');
-
+          dragDropBoxEl.addClass('is-dropped');
           _this.uploadImageLoaded = true;
         },
         onFileChange: function(e) {
@@ -133,6 +133,9 @@
         },
         imageBackground: true,
         imageBackgroundBorderWidth: 20,
+        initialZoom: 'min',
+        smallImage: 'allow',
+        maxZoom: 3,
         allowDragNDrop: false,
         $fileInput: _this._getModalEl().find('.image-uploader__file-chooser--js')
       };
