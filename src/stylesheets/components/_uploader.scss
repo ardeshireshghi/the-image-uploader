@@ -120,6 +120,12 @@
                 background-color: $photo-uploader-drop-area-dragged-bg-color;
                 outline-offset: -20px;
             }
+
+            .is-dropped & {
+                outline: 0;
+                background-color: transparent;
+                outline-offset: 0;
+            }
         }
 
         &__image {
@@ -138,7 +144,7 @@
             max-width: 100%;
             width: 100%;
         }
-        
+
         &__image-cropper {
             .is-dropped & {
                     display: inline-block;
