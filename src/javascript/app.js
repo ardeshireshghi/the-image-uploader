@@ -36,13 +36,9 @@
            .append(uploadBtnSecondEl);
 
   var myUploaderFirst = imageUploader(uploadBtnFirstEl, {
-    fileInputName: 'testfile1',
-    url: 'http://localhost:9301/upload',
-    uploadDone: function(response) {
-      console.log('myUploaderFirst, Upload finished', response);
-    },
-    uploadError: function(xhr, textStatus, err) {
-      console.log('myUploaderFirst, Error', xhr, textStatus, err);
+    upload: false,
+    cropFinished: function(fileName, dataURI, fileBlob) {
+      console.log('Crop has finished', arguments);
     }
   });
 

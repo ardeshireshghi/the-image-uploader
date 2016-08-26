@@ -31,6 +31,7 @@
   ImageUploader.defaults = {
     fileInputName: 'the-uploader-image',
     dragDrop: true,
+    upload: true,
     url: ''
   };
 
@@ -47,7 +48,18 @@
         modalId: _this._getModalId()
       }));
 
-      this.view.initialise().on('uploadImageReady', $.proxy(this, '_doUploadImage'));
+      this.view.initialise().on('uploadImageReady', function(fileName, imageDataURI) {
+        // Crop finished callback
+        if (typeof _this.settings.cropFinished === 'function') {
+          _this.settings.cropFinished.call(null, fileName, imageDataURI, dataURItoBlob(imageDataURI));
+        }
+
+        if (_this.settings.upload) {
+          _this_doUploadImage.apply(_this, arguments);
+        } else {
+          _this.hide();
+        }
+      });
     },
 
     _getModalId: function() {
@@ -70,6 +82,7 @@
       }, function(xhr, textStatus, err) {
         _this.logger.log('Error', xhr, textStatus, err);
         _this.settings.uploadError && _this.settings.uploadError.apply(null, arguments);
+        _this.hide();
       });
     },
 
