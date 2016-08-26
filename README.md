@@ -2,7 +2,15 @@
 Easy to use and stylish Ajax image uploader
 
 ## Dependencies
-Main dependency is jQuery
+* jQuery 
+* cropit
+* font-awesome
+* handlebars
+* jvent
+* lodash
+* remodal
+
+Note: Also currently it only works through common.js API using Browserify unless all the above dependencies are met (injected to the global scope). It should also work with require.js AMD but that needs to be further tested!
 
 ## Usage
 Below example shows how the uploader can be used:
