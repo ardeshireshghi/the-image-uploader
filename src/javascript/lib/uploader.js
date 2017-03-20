@@ -55,7 +55,7 @@
         }
 
         if (_this.settings.upload) {
-          _this_doUploadImage.apply(_this, arguments);
+          _this._doUploadImage(fileName, imageDataURI);
         } else {
           _this.hide();
         }
