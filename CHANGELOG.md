@@ -1,3 +1,5 @@
+#1.0.6: Fixing major syntax error
+
 #1.0.5: Added crop only mode without upload:
 * cropFinished callback to get the updated cropped URI and blob
 
