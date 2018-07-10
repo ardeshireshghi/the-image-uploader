@@ -1,3 +1,5 @@
+#1.0.7: Update jquery version to fix vulnerability
+
 #1.0.6: Fixing major syntax error
 
 #1.0.5: Added crop only mode without upload:
